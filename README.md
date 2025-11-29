@@ -1,62 +1,48 @@
 # MSCS_634_Lab_6
 
-#  Association Rule Mining with Apriori and FP-Growth
+## README for MSCS_634_Lab_6: Association Rule Mining with Apriori and FP-Growth
+Overview
 
-## Overview
+This repository contains the Jupyter Notebook for Lab 6: Association Rule Mining using Apriori and FP-Growth. The purpose of this lab is to understand how association rule mining works and to apply two major algorithms—Apriori and FP-Growth—to extract meaningful patterns from a real-world dataset. The dataset used is the IMDb Top 1000 Movies, which includes attributes such as genres, directors, and leading stars. These features are converted into item transactions, enabling the discovery of hidden relationships within the movie industry.
 
-This repository contains the Jupyter Notebook for **Lab 6: Association Rule Mining with Apriori and FP-Growth**. In this lab, we explore the association rule mining techniques using the **Apriori** and **FP-Growth** algorithms. The goal of this lab is to analyze a dataset, identify frequent itemsets, and generate meaningful association rules to uncover hidden patterns in the data.
+## Purpose of the Lab
 
-The dataset used in this lab is the **IMDb Top 1000 Movies** dataset, which includes various movie attributes such as genres, directors, and stars. These attributes are treated as items in a transaction dataset, allowing us to apply association rule mining techniques to discover correlations between these items.
+The main goal of this lab is to:
 
-## Objectives
+Explore how frequent itemsets and association rules are generated.
 
-1. **Frequent Itemset Mining**: 
-   We mine frequent itemsets from the dataset using both **Apriori** and **FP-Growth** algorithms.
-   
-2. **Association Rule Generation**: 
-   After finding frequent itemsets, we generate association rules and evaluate metrics such as support, confidence, and lift to interpret the results.
+Compare the efficiency and performance of the Apriori and FP-Growth algorithms.
 
-3. **Comparative Analysis**: 
-   The lab includes a comparison of the performance of the **Apriori** and **FP-Growth** algorithms in terms of execution time and effectiveness.
+Interpret the patterns discovered from the IMDb dataset to gain insights into common movie characteristics.
 
-## Steps Covered
+## Key Insights and Findings
 
-1. **Data Preprocessing**: 
-   - Cleaned the dataset by removing rows with missing values.
-   - Converted relevant columns (genre, director, and stars) into lists for transaction encoding.
+Through the analysis and rule mining process, several important insights were identified:
 
-2. **Apriori and FP-Growth Implementation**: 
-   - Implemented the **Apriori** algorithm for frequent itemset mining.
-   - Implemented the **FP-Growth** algorithm for comparison.
+Frequent Genre Combinations: Genres such as Drama, Action, and Adventure frequently appeared together across many movies.
 
-3. **Visualization**: 
-   - Created visualizations of the most frequent itemsets using **Seaborn** to highlight key patterns.
+Popular Director-Actor Patterns: Some directors consistently worked with specific actors, which showed up as strong association rules.
 
-4. **Performance Comparison**: 
-   - Compared the execution times of **Apriori** and **FP-Growth**.
+High-Lift Rules: Several rules with high lift indicated strong correlations—for example, movies featuring certain stars tended to share similar genres.
 
-## Requirements
+FP-Growth was generally faster than Apriori on this dataset, especially during frequent itemset generation.
 
-- Python 3.x
-- Pandas
-- Matplotlib
-- Seaborn
-- MLxtend (for Apriori and FP-Growth)
+These insights help reveal common patterns in film creation, casting, and genre selection.
 
-## How to Run
+## Challenges and Decisions Made
 
-1. Clone the repository to your local machine.
-2. Install the required libraries using pip:
-   ```
-   pip install -r requirements.txt
-   ```
-3. Open the Jupyter Notebook and run each cell in sequence.
+During the lab, the following challenges were encountered:
+
+Data Preprocessing Complexity: Some rows contained missing or inconsistent values, requiring cleaning before converting attributes into transactions.
+
+Selecting Minimum Support/Confidence: Choosing appropriate thresholds was critical. Too high led to very few rules; too low resulted in too many uninformative rules.
+
+Algorithm Performance Differences: Apriori took longer for itemset generation due to its iterative nature, whereas FP-Growth required building an FP-tree, which is efficient but takes more memory.
+
+Decisions such as using moderate support thresholds and cleaning the dataset helped ensure meaningful, interpretable results.
+
 
 ## Conclusion
 
-The lab provides a detailed comparison between **Apriori** and **FP-Growth**, highlighting their strengths and limitations for frequent itemset mining and association rule generation. Both algorithms successfully mined interesting patterns from the IMDb dataset, with Apriori proving faster for the given data size.
-
-
-
-Happy mining!
+This lab demonstrated the strengths of Apriori and FP-Growth for mining frequent itemsets and association rules. Both algorithms uncovered meaningful patterns from the IMDb dataset, such as recurring genre combinations and director–actor relationships. FP-Growth proved to be more efficient computationally, while Apriori provided more transparent step-by-step generation of itemsets. Overall, the lab enhanced understanding of association rule mining concepts and their practical applications.
 
